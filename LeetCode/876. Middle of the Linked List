@@ -1,0 +1,31 @@
+// 
+lass Solution {
+    public ListNode middleNode(ListNode head) {
+
+        int counter = 1;
+        ListNode current = head;
+
+        ListNode dummy = new ListNode(0, head);
+
+        while(current.next != null) {
+
+            counter++;
+            current = current.next;
+
+        }
+
+        int middle = counter/2;
+
+
+        while (middle > 0) {
+// traverse the ListNode to tha target Node
+
+            dummy = dummy.next;
+
+            middle--;
+        }
+
+        return dummy.next;        
+        
+    }
+}
