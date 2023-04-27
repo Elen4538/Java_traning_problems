@@ -1,0 +1,24 @@
+// https://leetcode.com/problems/jewels-and-stones/
+class Solution {
+    public int numJewelsInStones(String jewels, String stones) {
+        
+        int counter = 0;
+
+        char[] stonesChar = stones.toCharArray();
+        char[] jewelsChar = jewels.toCharArray();
+
+        for (char x: stonesChar) {
+            for (char y: jewelsChar) {
+
+                if(x == y) {
+                    counter++;
+                }
+
+            }
+
+        }
+        return counter;
+
+        
+    }
+}
