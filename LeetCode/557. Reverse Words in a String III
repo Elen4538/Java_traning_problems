@@ -1,0 +1,42 @@
+// https://leetcode.com/problems/reverse-words-in-a-string-iii/description/
+
+// my Solution
+class Solution {
+    public String reverseWords(String s) {
+        String[] s2 = s.split(" ");
+        StringBuilder result = new StringBuilder();
+
+        for (String x: s2) {
+            for(int i = x.length()-1; i>=0;i--) {
+                result.append(x.charAt(i));
+            }
+            result.append(" ");
+        }
+        result.deleteCharAt(s.length());
+
+        return result.toString();
+ 
+        
+    }
+}
+
+// more elegant solution I like
+
+class Solution {
+    public String reverseWords(String s) {
+        //ex: "Dog cat"
+        String words[]=s.split(" ");
+        // get splitted into substring i.e "Dog" "Cat"
+        for(int i=0;i<words.length;i++){
+
+            StringBuilder st=new StringBuilder(words[i]); //make string mutable
+            st.reverse(); 
+            words[i]=st.toString(); 
+        }
+        for(int i=1;i<words.length;i++){
+            words[0]=words[0]+" "+words[i];
+        }
+        return words[0];
+
+        
+    }
