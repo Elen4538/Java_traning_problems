@@ -1,0 +1,25 @@
+// https://leetcode.com/problems/maximum-nesting-depth-of-the-parentheses/description/
+
+class Solution {
+    public int maxDepth(String s) {
+
+        if(s.length()==1){return 0;}
+        int counter= 0;
+        TreeSet<Integer> setString = new TreeSet<>();
+
+        for (int i=0;i< s.length();i++) {
+
+            if(s.charAt(i) == 40) {
+                counter++;
+                setString.add(counter);
+            }
+            if(s.charAt(i) == 41) {
+                counter--;
+            }
+
+        }
+        if(setString.isEmpty()){return 0;}
+
+        return setString.last();
+    }
+}
