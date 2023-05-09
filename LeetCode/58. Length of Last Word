@@ -1,0 +1,25 @@
+// https://leetcode.com/problems/length-of-last-word/description/
+
+class Solution {
+    public int lengthOfLastWord(String s) {
+
+        String[] words = s.split(" ");
+
+        int wordsArraySize = words.length - 1;
+
+        return words[wordsArraySize].length();
+        
+    }
+}class Solution {
+    public int lengthOfLastWord(String s) {
+
+        String[] words = s.split(" ");
+
+        int wordsArraySize = words.length - 1;
+
+        return words[wordsArraySize].length();
+
+
+        
+    }
+}
