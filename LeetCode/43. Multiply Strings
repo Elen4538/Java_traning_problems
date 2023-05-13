@@ -1,0 +1,16 @@
+// https://leetcode.com/problems/multiply-strings/submissions/949548670/
+
+import java.math.BigInteger;
+class Solution {
+    public String multiply(String num1, String num2) {
+        
+        BigInteger x = new BigInteger(num1);
+        BigInteger y = new BigInteger(num2);
+
+        BigInteger res = x.multiply(y);
+
+        String resultString = String.valueOf(res);
+
+        return resultString;
+    }
+}
