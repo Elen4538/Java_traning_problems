@@ -1,0 +1,29 @@
+// https://leetcode.com/problems/plus-one/description/
+
+import java.math.BigInteger;
+import java.util.Arrays;
+
+class Solution {
+    public int[] plusOne(int[] digits) {
+        
+        StringBuilder stringBuilder = new StringBuilder();
+
+        for(int i=0;i<digits.length;i++) {
+            stringBuilder.append(digits[i]); /// here we getString number
+        }
+
+        //conver number into bigInt andadd one
+        BigInteger bigInteger = new BigInteger(stringBuilder.toString());
+        bigInteger = bigInteger.add(BigInteger.ONE);
+        
+        //System.out.println("Our bigIntere is:   " + bigInteger);
+        //turn big integer into an array in a few steps
+        
+        String s = String.valueOf(bigInteger);
+        String[] stringArray = s.split("");
+
+        int[] digitResult = Arrays.stream(stringArray).mapToInt(Integer::parseInt).toArray();
+
+        return digitResult;
+    }
+}
